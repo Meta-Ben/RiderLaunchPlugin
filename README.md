@@ -1,9 +1,10 @@
 <p align="center">
-    <img width="300" height="300" src="">
+    <img width="300" height="300" src="https://github.com/user-attachments/assets/cfe5e7f7-a190-4c62-aafd-4d370138e4aa">
+
 </p>
 
 
-<h1 align="center">🚀 Rider Launcher Godot Plugin 🔌</h1>
+<h1 align="center">🚀 Rider Launch Godot Plugin 🔌</h1>
 <p align="center">
     <a href="https://godotengine.org/download/archive/4.3-stable/"> 
         <img src="https://img.shields.io/badge/Godot%204--3-Godot%204--3?style=for-the-badge&logo=godot-engine&logoColor=white&label=Godot%20version&color=26476D">
