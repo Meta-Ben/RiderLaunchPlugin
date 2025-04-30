@@ -6,12 +6,12 @@ var hidden_old_play_button : Button
 var editor_settings : EditorSettings
 var editor_command_palette : EditorCommandPalette
 
-var rider_launcher_http : RiderLaunchHttp
+var rider_launch_http : RiderLaunchHttp
 
-const SETTING_BASE_URL := "rider_launcher/Base Url"
-const SETTING_PORT := "rider_launcher/Port"
-const SETTING_EXECUTION_TYPE := "rider_launcher/Execution Type"
-const SETTING_CONFIG_TO_EXECUTE := "rider_launcher/Config to execute"
+const SETTING_BASE_URL := "rider_launch/Base Url"
+const SETTING_PORT := "rider_launch/Port"
+const SETTING_EXECUTION_TYPE := "rider_launch/Execution Type"
+const SETTING_CONFIG_TO_EXECUTE := "rider_launch/Config to execute"
 
 
 func _enter_tree():
@@ -19,9 +19,9 @@ func _enter_tree():
 	editor_settings = get_editor_interface().get_editor_settings()
 	editor_command_palette = get_editor_interface().get_command_palette()
 	_init_settings()
-	
-	rider_launcher_http = RiderLaunchHttp.new()
-	add_child(rider_launcher_http)
+
+	rider_launch_http = RiderLaunchHttp.new()
+	add_child(rider_launch_http)
 	
 	_replace_play_button()
 
@@ -31,8 +31,8 @@ func _exit_tree() -> void:
 		custom_play_button.queue_free()
 	if hidden_old_play_button:
 		hidden_old_play_button.show()
-	if rider_launcher_http:
-		rider_launcher_http.queue_free()
+	if rider_launch_http:
+		rider_launch_http.queue_free()
 	queue_free()
 
 
@@ -70,7 +70,7 @@ func _find_editor_run_bar(root: Node) -> Node:
 	return null
 
 func _on_custom_play_pressed():
-	rider_launcher_http.request_execution(editor_settings.get_setting(SETTING_BASE_URL), 
+	rider_launch_http.request_execution(editor_settings.get_setting(SETTING_BASE_URL), 
 		editor_settings.get_setting(SETTING_PORT), 
 		editor_settings.get_setting(SETTING_EXECUTION_TYPE), 
 		editor_settings.get_setting(SETTING_CONFIG_TO_EXECUTE)
